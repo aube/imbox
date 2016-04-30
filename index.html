@@ -3,7 +3,7 @@
 	
 	<head>
 		<meta charset="UTF-8">
-		<title>ImBoxJS</title>
+		<title>imBox - VanillaJS+CSS3 images slider and lightbox</title>
 		<link rel="stylesheet" type="text/css" href="./css/imbox.min.css"/>
 		<link rel="stylesheet" type="text/css" href="./css/example.min.css"/>
 	</head>
@@ -29,16 +29,11 @@
         container:document.getElementById('simple'),
         images:[
             './example/images/1328478561.jpg',
-            './example/images/1328478813.jpg',
-            './example/images/1328478960.jpg',
-            './example/images/1328479033.jpg',
-            './example/images/1328479141.jpg',
-            './example/images/1328479321.jpg',
             './example/images/1328479402.jpg',
-            './example/images/1330276988.jpg',
             './example/images/1330277096.jpg'
         ],
-        zoomOnClick:false
+        zoomOnClick:false,
+        speed:400
     };
     var simple = new ImBox(params);
 				</pre>
@@ -98,9 +93,10 @@
         container:document.getElementById('zoom'),
         images:document.querySelectorAll('#zoomContainer>li'),
         imagesIsThumbnails:true,
-        zoomOnClick:true
+        zoomOnClick:true,
+        speed:400
     };
-    var thumbnails = new ImBox(params);
+    var zoom = new ImBox(params);
 				</pre>
 
 				<h3>SCSS:</h3>
@@ -172,7 +168,8 @@
         container:document.querySelector('#thumbnails'),
         images:document.querySelectorAll('#thumbnailsContainer>img'),
         imagesIsThumbnails:true,
-        zoomOnClick:false
+        zoomOnClick:false,
+        speed:400
     };
     var thumbnails = new ImBox(params);
 				</pre>

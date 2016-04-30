@@ -1,0 +1,18 @@
+{
+  "name": "imbox",
+  "homepage": "https://github.com/aube/imbox",
+  "authors": [
+    "aube <dn@aube.work>"
+  ],
+  "description": "VanillaJS+CSS3 images slider and lightbox",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "example",
+    "css/example*",
+    "bower.json",
+    "gulpfile.js"
+  ]
+}
