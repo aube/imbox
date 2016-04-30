@@ -18,6 +18,9 @@
 		top:0px;
 		left:0px;
 		z-index:1000;
+		& .left,.right,.oldcenter,.center{
+			background-size: contain;
+		}
 	}
 
 	.left,.right,.oldcenter,.center{
