@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="ru">
+	
+	<head>
+		<meta charset="UTF-8">
+		<title>ImBoxJS</title>
+		<link rel="stylesheet" type="text/css" href="/css/imbox.min.css"/>
+		<link rel="stylesheet" type="text/css" href="/css/example.min.css"/>
+	</head>
+
+	<body>
+		
+		<h1>imBox examples</h1>
+		
+		<section>
+			<h2>1. Simple slider</h2>
+			<div class="col-demo">
+				<div id='simple' class='imBox-container'></div>
+			</div>
+			<div class="col-demo">
+				<h3>HTML:</h3>
+				<pre>
+    &lt;div id='simple' class='imBox-container'&gt;&lt;/div&gt;
+				</pre>
+
+				<h3>JS:</h3>
+				<pre>
+    var params = {
+        container:document.getElementById('simple'),
+        images:[
+            '/example/images/1328478561.jpg',
+            '/example/images/1328478813.jpg',
+            '/example/images/1328478960.jpg',
+            '/example/images/1328479033.jpg',
+            '/example/images/1328479141.jpg',
+            '/example/images/1328479321.jpg',
+            '/example/images/1328479402.jpg',
+            '/example/images/1330276988.jpg',
+            '/example/images/1330277096.jpg'
+        ],
+        zoomOnClick:false
+    };
+    var simple = new ImBox(params);
+				</pre>
+
+				<h3>SCSS:</h3>
+				<pre>
+    #zoom{
+        .right-arrow{
+            width:85%;
+            background-size: 10%;
+            background-position: 90% center;
+            opacity: 0;
+            &amp;:hover{
+                opacity: .5;
+            }
+        }
+    }
+				</pre>
+			</div>
+
+			
+		</section>
+
+		<section>
+
+			<h2>2. Slider, Bullets and Zoom onClick imBox</h2>
+			<div class="col-demo">
+				<div id='zoom' class='imBox-container'></div>
+
+				<ul id='zoomContainer'>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328478561.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328478813.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328478960.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328479033.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328479141.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328479321.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1328479402.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1330276988.jpg'>&bullet;</li>
+					<li class='thumbnail' data-imboxsrc='/example/images/1330277096.jpg'>&bullet;</li>
+				</ul>
+			</div>
+			<div class="col-demo">
+			
+				<h3>HTML:</h3>
+				<pre>
+    &lt;div id='zoom' class='imBox-container'&gt;&lt;/div&gt;
+
+    &lt;div id='zoomContainer'&gt;
+        &lt;li class='thumbnail' data-imboxsrc='...'&gt;&amp;bullet;&lt;/li&gt;
+        &lt;li class='thumbnail' data-imboxsrc='...'&gt;&amp;bullet;&lt;/li&gt;
+    &lt;/div&gt;
+				</pre>
+			
+				<h3>JS:</h3>
+				<pre>
+    var params = {
+        container:document.getElementById('zoom'),
+        images:document.querySelectorAll('#zoomContainer>li'),
+        imagesIsThumbnails:true,
+        zoomOnClick:true
+    };
+    var thumbnails = new ImBox(params);
+				</pre>
+
+				<h3>SCSS:</h3>
+				<pre>
+    #zoomContainer{
+        text-align: center;
+        padding:0;
+        margin:0;
+        margin-top: -50px;
+        z-index:100;
+        position: absolute;
+        width:100%;
+        li.thumbnail{
+            display:inline-block;
+            list-style: none;
+            color:white;
+            font-size:42px;
+            cursor:pointer;
+            padding:5px 2px;
+            margin:0px;
+            line-height: 10px;
+            text-shadow:0 0 2px #111;
+            &amp;.active{
+            	color:darkcyan;
+            }
+        }
+    }
+				</pre>
+
+			</div>
+		</section>
+
+
+		<section>
+			
+			<h2>3. Slider with thumbnails</h2>
+
+			<div class="col-demo">
+
+				<div id='thumbnails' class='imBox-container'></div>
+				
+				<div id='thumbnailsContainer'>
+					<img class='thumbnail' src='/example/images/micro-1328478561.jpg' data-imboxsrc='/example/images/1328478561.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1328478813.jpg' data-imboxsrc='/example/images/1328478813.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1328478960.jpg' data-imboxsrc='/example/images/1328478960.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1328479033.jpg' data-imboxsrc='/example/images/1328479033.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1328479141.jpg' data-imboxsrc='/example/images/1328479141.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1328479321.jpg' data-imboxsrc='/example/images/1328479321.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1328479402.jpg' data-imboxsrc='/example/images/1328479402.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1330276988.jpg' data-imboxsrc='/example/images/1330276988.jpg'>
+					<img class='thumbnail' src='/example/images/micro-1330277096.jpg' data-imboxsrc='/example/images/1330277096.jpg'>
+				</div>
+			</div>
+			<div class="col-demo">
+
+				<h3>HTML:</h3>
+				<pre>
+    &lt;div id='thumbnails' class='imBox-container'&gt;&lt;/div&gt;
+
+    &lt;div id='thumbnailsContainer'&gt;
+        &lt;img class='thumbnail' src='...' data-imboxsrc='...'&gt;
+        &lt;img class='thumbnail' src='...' data-imboxsrc='...'&gt;
+    &lt;/div&gt;
+				</pre>
+
+				<h3>JS:</h3>
+				<pre>
+    var params = {
+        container:document.querySelector('#thumbnails'),
+        images:document.querySelectorAll('#thumbnailsContainer>img'),
+        imagesIsThumbnails:true,
+        zoomOnClick:false
+    };
+    var thumbnails = new ImBox(params);
+				</pre>
+
+
+				<h3>SCSS:</h3>
+				<pre>
+    #thumbnailsContainer{
+        .thumbnail{
+            border:2px solid #fff;
+            cursor:pointer;
+            &amp;.active{
+                border:2px solid tomato;
+            }
+        }
+    }
+				</pre>
+
+			</div>
+
+
+		</section>
+
+
+		
+		
+		<script src='/js/imbox.min.js'></script>
+		<script>
+			var params = {
+				container:document.getElementById('simple'),
+				images:[
+					'/example/images/1328478561.jpg',
+					'/example/images/1328478813.jpg',
+					'/example/images/1328478960.jpg',
+					'/example/images/1328479033.jpg',
+					'/example/images/1328479141.jpg',
+					'/example/images/1328479321.jpg',
+					'/example/images/1328479402.jpg',
+					'/example/images/1330276988.jpg',
+					'/example/images/1330277096.jpg'
+				],
+				zoomOnClick:false,
+				currentFrame:3
+			};
+			var simple = new ImBox(params);
+
+			var params = {
+				container:document.querySelector('#thumbnails'),
+				images:document.querySelectorAll('#thumbnailsContainer>img'),
+				imagesIsThumbnails:true,
+				zoomOnClick:false
+			};
+			var thumbnails = new ImBox(params);
+
+
+			var params = {
+				container:document.querySelector('#zoom'),
+				images:document.querySelectorAll('#zoomContainer>li'),
+				imagesIsThumbnails:true,
+				zoomOnClick:true,
+				currentFrame:4
+			};
+			var thumbnails = new ImBox(params);
+			
+		</script>
+	</body>
+
+</html>
