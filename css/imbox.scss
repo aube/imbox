@@ -74,13 +74,13 @@
 	.left-arrow{
 		left:0px;
 		background-position: 50% center;
-		background-image:url('./img/left-arrow.svg');
+		background-image:url('../img/left-arrow.svg');
 	}
 
 	.right-arrow{
 		right:0px;
 		background-position: 50% center;
-		background-image:url('./img/right-arrow.svg');
+		background-image:url('../img/right-arrow.svg');
 	}
 	
 	.close-button{
@@ -95,7 +95,7 @@
 		background-size: 40%;
 		background-position: center;
 		background-color: transparent;
-		background-image:url('./img/close-icon.svg');
+		background-image:url('../img/close-icon.svg');
 		&:hover{
 			background-color: rgba(0,0,0,.2);
 			opacity:1;
